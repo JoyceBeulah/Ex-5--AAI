@@ -11,9 +11,12 @@ Step 3: Simulate the movement of the object for a number of time steps, generati
 Step 3: For each measurement, predict the next state using kf.predict().<BR>
 Step 4: Update the state estimate based on the measurement using kf.update().<BR>
 Step 5: Store the estimated state in a list.<BR>
-Step 6: Plot the true and estimated positions.<BR>
+Step 6: Plot the true and estimated positions.<BR>4
+
 <H3>Program:</H3>
+
 ```python
+
 import numpy as np
 class KalmanFilter:
   def __init__ (self,F,H,Q,R,x0,P0):
@@ -35,11 +38,12 @@ class KalmanFilter:
     S = np.dot(np.dot(self.H, self.P),self.H.T) + self.R
     K = np.dot(np.dot(self.P, self.H.T), np.linalg.inv(S))
     self.x = self.x + np.dot(K, y)
+
 ```
 
 <H3>Output:</H3>
 
-![image](https://github.com/JoyceBeulah/Ex-5--AAI/assets/118343698/08b824b6-157e-4c1b-829a-d5b5b7d4b952)
+![image](https://github.com/JoyceBeulah/Ex-5--AAI/assets/118343698/43f866a6-0506-4fc9-9bb6-d68d0109c96a)
 
 
 <H3>Results:</H3>
